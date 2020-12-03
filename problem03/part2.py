@@ -1,3 +1,5 @@
+from functools import reduce
+
 with open('problem3_input.txt') as file:
     inputs = file.readlines()
 
@@ -28,5 +30,6 @@ trees.append(trees_ran_into(5, 1, slopes))
 trees.append(trees_ran_into(7, 1, slopes))
 trees.append(trees_ran_into(1, 2, slopes))
 
-print(trees)
-print(trees[0] * trees[1] * trees[2] * trees[3] * trees[4])
+answer = reduce((lambda x, y: x * y), trees)
+
+print(answer)
