@@ -7,8 +7,8 @@ target = 2020
 
 def loop(inputs):
     for i in range(0, len(inputs) - 2):
-        for j in range(1, len(inputs) - 1):
-            for k in range(2, len(inputs)):
+        for j in range(i + 1, len(inputs) - 1):
+            for k in range(j + 1, len(inputs)):
                 num_one = inputs[i]
                 num_two = inputs[j]
                 num_three = inputs[k]
