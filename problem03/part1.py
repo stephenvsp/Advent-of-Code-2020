@@ -5,20 +5,16 @@ slopes = [i.strip() for i in inputs]
 
 count = 0
 x = 0
+y = 0
 
 line_length = len(slopes[0])
 
-print(line_length)
-
-for slope in slopes:
-    if slope[x % line_length] == '#':
+while y < len(slopes):
+    if slopes[y][x % line_length] == '#':
         count += 1
-
-    print(slope)
-    print(x)
-    print(slope[x % line_length])
     
     x += 3
+    y += 1
     
 
     
