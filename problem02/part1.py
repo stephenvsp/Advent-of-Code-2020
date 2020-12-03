@@ -14,10 +14,7 @@ for i in inputs:
 
     password = split[2]
 
-    count = 0
-    for c in password:
-        if c == character:
-            count += 1
+    count = password.count(character)
 
     if count >= lower_bound and count <= upper_bound:
         total_count += 1

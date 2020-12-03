@@ -14,11 +14,6 @@ for i in inputs:
 
     password = split[2]
 
-    count = 0
-    for c in password:
-        if c == character:
-            count += 1
-
     if (password[lower_bound - 1] == character) ^ (password[upper_bound - 1] == character):
         total_count += 1
 
