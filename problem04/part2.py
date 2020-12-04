@@ -60,7 +60,6 @@ def is_valid_hgt(passport):
         else:
             return False
 
-
 def is_valid_ecl(passport):
     if 'ecl' not in passport:
         return False
