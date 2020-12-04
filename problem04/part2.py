@@ -60,13 +60,14 @@ def is_valid_hgt(passport):
         else:
             return False
 
-valid_ecls = ['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth']
 
 def is_valid_ecl(passport):
     if 'ecl' not in passport:
         return False
     else:
         ecl = passport['ecl']
+
+        valid_ecls = ['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth']
 
         return ecl in valid_ecls 
         
