@@ -20,13 +20,16 @@ for line in inputs:
 passports.append(passport)
 
 
+def is_valid_num(value, lower_bound, upper_bound):
+    return value >= lower_bound and value <= upper_bound
+
 def is_valid_byr(passport):
     if 'byr' not in passport:
         return False
     else:
         byr = int(passport['byr'])
 
-        return byr >= 1920 and byr <= 2002
+        return is_valid_num(byr, 1920, 2002)
 
 def is_valid_iyr(passport):
     if 'iyr' not in passport:
@@ -34,7 +37,7 @@ def is_valid_iyr(passport):
     else:
         iyr = int(passport['iyr'])
 
-        return iyr >= 2010 and iyr <= 2020
+        return is_valid_num(iyr, 2010, 2020)
 
 def is_valid_eyr(passport):
     if 'eyr' not in passport:
@@ -42,7 +45,7 @@ def is_valid_eyr(passport):
     else:
         eyr = int(passport['eyr'])
 
-        return eyr >= 2020 and eyr <= 2030
+        return is_valid_num(eyr, 2020, 2030)
 
 def is_valid_hgt(passport):
     if 'hgt' not in passport:
@@ -54,8 +57,9 @@ def is_valid_hgt(passport):
         num = int(hgt[:-2])
 
         if system == 'cm':
-            return num >= 150 and num <= 193
+            return is_valid_num(num, 150, 193)
         elif system == 'in':
+            return is_valid_num(num, 59,)
             return num >= 59 and num <= 76
         else:
             return False
@@ -66,9 +70,7 @@ def is_valid_ecl(passport):
     else:
         ecl = passport['ecl']
 
-        valid_ecls = ['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth']
-
-        return ecl in valid_ecls 
+        return re.match(r"(amb|blu|brn|gry|grn|hzl|oth)", ecl)
         
 def is_valid_pid(passport):
     if 'pid' not in passport:
