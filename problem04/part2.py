@@ -60,7 +60,6 @@ def is_valid_hgt(passport):
             return is_valid_num(num, 150, 193)
         elif system == 'in':
             return is_valid_num(num, 59, 76)
-            return num >= 59 and num <= 76
         else:
             return False
 
