@@ -1,7 +1,5 @@
 with open('problem7_input.txt') as file:
-    inputs = file.readlines()
-
-rules = [i.strip() for i in inputs]
+    rules = file.read().splitlines()
 
 bag_map = {}
 
