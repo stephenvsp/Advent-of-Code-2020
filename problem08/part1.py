@@ -11,7 +11,7 @@ while pointer < len(program):
 
     if pointer in executed_commands:
         print(accumulator)
-        break;
+        break
     else:
         executed_commands.add(pointer)
 
