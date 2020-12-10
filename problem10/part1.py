@@ -21,6 +21,4 @@ for jolt in jolts:
 
     last = jolt
 
-print(difference_of_one)
-print(difference_of_three)
 print(difference_of_one * difference_of_three)
