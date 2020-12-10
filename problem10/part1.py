@@ -11,8 +11,6 @@ difference_of_one = 0
 difference_of_three = 0
 last = 0
 
-print(jolts)
-
 for jolt in jolts:
     if jolt - last  == 1:
         difference_of_one += 1
