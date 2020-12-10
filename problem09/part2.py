@@ -7,15 +7,19 @@ target = 1398413738
 front = 0
 back = 0
 
-while (sum(data[back:front]) != target):
-    total = sum(data[back:front])
+total = 0
+
+while (total != target):
 
     if total < target:
+        total += data[front]
         front += 1
+        
     elif total > target:
+        total -= data[back]
         back += 1
 
 
-continuous_set = data[521:538]
+continuous_set = data[back:front]
 
 print(min(continuous_set) + max(continuous_set))
