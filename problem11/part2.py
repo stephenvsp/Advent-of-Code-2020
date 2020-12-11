@@ -3,14 +3,21 @@ with open('problem11_input.txt') as file:
 
 
 def check_seats_in_direction(x, y, x_change, y_change, seats):
-    count = 0
 
-    current_x = x + x_change
-    current_y = y + y_change
+    i = 1
+    current_x = x + (x_change * i)
+    current_y = y + (y_change * i)
 
-    if 0 <= current_x < len(seats[y]) and 0 <= current_y < len(seats):
-        if seats[current_y][current_x] == '#':
+    while 0 <= current_x < len(seats[y]) and 0 <= current_y < len(seats):
+        current_seat = seats[current_y][current_x]
+        if current_seat == '#':
             return 1
+        elif current_seat == 'L':
+            return 0
+
+        i += 1
+        current_x = x + (x_change * i)
+        current_y = y + (y_change * i)
 
     return 0
 
@@ -36,7 +43,7 @@ def fill_seats(seats):
             current_seat = seats[y][x]
 
             if current_seat == '#':
-                if (check_adjacent_seats(x, y, seats) >= 4):
+                if (check_adjacent_seats(x, y, seats) >= 5):
                     new_seats[y] = new_seats[y][:x] + 'L' + new_seats[y][x + 1:]
 
             elif current_seat == 'L':
