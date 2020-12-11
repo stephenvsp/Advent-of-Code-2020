@@ -8,11 +8,11 @@ def check_seats_in_direction(x, y, x_change, y_change, seats):
     current_x = x + x_change
     current_y = y + y_change
 
-    if 0 <= current_x and current_x < len(seats[y]) and 0 <= current_y and current_y < len(seats):
+    if 0 <= current_x < len(seats[y]) and 0 <= current_y < len(seats):
         if seats[current_y][current_x] == '#':
-            count += 1
+            return 1
 
-    return count
+    return 0
 
 def check_adjacent_seats(x, y, seats):
     count = 0
