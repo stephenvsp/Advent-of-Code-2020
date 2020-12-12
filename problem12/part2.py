@@ -25,5 +25,6 @@ for i in instructions:
     elif action == 'L':
         waypoint *= complex(0, 1)**(magnitude // 90)
 
-print(ship)
+print(ship.real + ship.imag)
+
 
