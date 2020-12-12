@@ -8,7 +8,7 @@ def check_seats_in_direction(x, y, x_change, y_change, seats):
     current_x = x + (x_change * i)
     current_y = y + (y_change * i)
 
-    while 0 <= current_x < len(seats[y]) and 0 <= current_y < len(seats):
+    while current_x in range(len(seats[y])) and current_y in range(len(seats)):
         current_seat = seats[current_y][current_x]
         if current_seat == '#':
             return 1
